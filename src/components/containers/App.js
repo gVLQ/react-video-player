@@ -1,11 +1,14 @@
 import React from 'react';
+import VlqPlayer from './VlqPlayer';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-function App() {
-  return (
-    <div>
-      <h1>Yo!</h1>
-    </div>
-  );
-}
+const App = () => (
+  <BrowserRouter>
+    <Switch>
+      <Route exact path="/" component={VlqPlayer} />
+      <Route exact path="/:activeVideo" component={VlqPlayer} />
+    </Switch>
+  </BrowserRouter>
+)
 
 export default App;
